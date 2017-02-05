@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="Test Cloud SDK REST" soapui-version="5.1.3" id="49f9831a-77c2-47ad-964b-9a27f63eb78a" abortOnError="false" runType="SEQUENTIAL" resourceRoot="" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:RestService" wadlVersion="http://wadl.dev.java.net/2009/02" name="Test Cloud SDK REST" type="rest" basePath="/cloudsdk-rest/rest/members/v1.0/search" definitionUrl="http://lh7u0cnu425ck6d:8080/cloudsdk-rest/rest/members/v1.0/search?_wadl" id="2680ef0d-c35c-4802-b8aa-a8875f45b86c" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://lh7u0cnu425ck6d:8080/cloudsdk-rest/rest/members/v1.0/search?_wadl"><con:part><con:url>http://lh7u0cnu425ck6d:8080/cloudsdk-rest/rest/members/v1.0/search?_wadl</con:url><con:content><![CDATA[<application xmlns="http://wadl.dev.java.net/2009/02" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:prefix1="http://enterprise.unitedhealthgroup.com/schema/api/dentalfacets/mem">
+  <grammars>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://enterprise.unitedhealthgroup.com/schema/api/dentalfacets/mem" xmlns:ns1="http://enterprise.unitedhealthgroup.com/schema/api/dentalfacets" xmlns:tns="http://enterprise.unitedhealthgroup.com/schema/api/dentalfacets/mem">
+      <xs:import namespace="http://enterprise.unitedhealthgroup.com/schema/api/dentalfacets"/>
+      <xs:element name="SearchMembersRequest" type="tns:SearchMembersRequestType"/>
+      <xs:element name="SearchMembersRequestType" type="tns:SearchMembersRequestType"/>
+      <xs:element name="SearchMembersResponse" type="tns:SearchMembersResponseType"/>
+      <xs:element name="SearchMembersResponseType" type="tns:SearchMembersResponseType"/>
+      <xs:complexType name="SearchMembersRequestType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="memberId" type="xs:string"/>
+          <xs:element minOccurs="0" name="lastName" type="xs:string"/>
+          <xs:element minOccurs="0" name="firstName" type="xs:string"/>
+          <xs:element minOccurs="0" name="dateOfBirth" type="xs:string"/>
+          <xs:element minOccurs="0" name="state" type="xs:string"/>
+          <xs:element minOccurs="0" name="zipCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="groupId" type="xs:string"/>
+          <xs:element minOccurs="0" name="groupName" type="xs:string"/>
+          <xs:element minOccurs="0" name="groupPolicyNumber" type="xs:string"/>
+          <xs:element minOccurs="0" name="sourceSpecificId" type="xs:string"/>
+          <xs:element minOccurs="0" name="pagination" type="tns:PaginationRequestType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PaginationRequestType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="start" type="xs:int"/>
+          <xs:element minOccurs="0" name="count" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PaginationResponseType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="count" type="xs:int"/>
+          <xs:element minOccurs="0" name="totalResults" type="xs:int"/>
+          <xs:element minOccurs="0" name="start" type="xs:int"/>
+          <xs:element minOccurs="0" name="thresholdIndicator" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MemberType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="name" type="tns:PersonNameType"/>
+          <xs:element minOccurs="0" name="identifiers" type="tns:MemberIdentifiersType"/>
+          <xs:element minOccurs="0" name="dateOfBirth" type="xs:string"/>
+          <xs:element minOccurs="0" name="memberSuffix" type="xs:int"/>
+          <xs:element minOccurs="0" name="relationshipCode" type="tns:CodeDescPairType"/>
+          <xs:element minOccurs="0" name="gender" type="tns:CodeDescPairType"/>
+          <xs:element minOccurs="0" name="postalAddress" type="tns:USPostalAddressType"/>
+          <xs:element minOccurs="0" name="groupInfo" type="tns:MemberGroupType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PersonNameType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="firstName" type="xs:string"/>
+          <xs:element minOccurs="0" name="middleInitial" type="xs:string"/>
+          <xs:element minOccurs="0" name="lastName" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MemberIdentifiersType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="memberKey" type="xs:int"/>
+          <xs:element minOccurs="0" name="subscribersMemberKey" type="xs:int"/>
+          <xs:element minOccurs="0" name="subscriberEmployeeId" type="xs:string"/>
+          <xs:element minOccurs="0" name="subscriberId" type="xs:string"/>
+          <xs:element minOccurs="0" name="memberSSN" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CodeDescPairType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="codeValue" type="xs:string"/>
+          <xs:element minOccurs="0" name="codeDesc" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="USPostalAddressType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="line1" type="xs:string"/>
+          <xs:element minOccurs="0" name="line2" type="xs:string"/>
+          <xs:element minOccurs="0" name="city" type="xs:string"/>
+          <xs:element minOccurs="0" name="state" type="xs:string"/>
+          <xs:element minOccurs="0" name="zip5" type="xs:string"/>
+          <xs:element minOccurs="0" name="zip4" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MemberGroupType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="groupID" type="xs:string"/>
+          <xs:element minOccurs="0" name="groupPolicyNumber" type="xs:string"/>
+          <xs:element minOccurs="0" name="groupName" type="xs:string"/>
+          <xs:element minOccurs="0" name="groupEffectiveDate" type="tns:DateRangeType"/>
+          <xs:element minOccurs="0" name="subgroupIdentifier" type="xs:string"/>
+          <xs:element minOccurs="0" name="subgroupPolicyCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="parentGroupIdentifier" type="xs:string"/>
+          <xs:element minOccurs="0" name="parentGroupName" type="xs:string"/>
+          <xs:element minOccurs="0" name="isOffshoreRestricted" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DateRangeType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="startDate" type="xs:string"/>
+          <xs:element minOccurs="0" name="stopDate" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SearchMembersResponseType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="result">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element minOccurs="0" name="resultmeta" type="tns:PaginationResponseType"/>
+                <xs:element maxOccurs="unbounded" minOccurs="0" name="members" nillable="true" type="tns:MemberType"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element minOccurs="0" name="status" type="ns1:StatusType"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://enterprise.unitedhealthgroup.com/schema/api/dentalfacets" xmlns:tns="http://enterprise.unitedhealthgroup.com/schema/api/dentalfacets">
+      <xs:complexType name="StatusType">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="messages" nillable="true" type="tns:MessageType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MessageType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="code" type="xs:anyType"/>
+          <xs:element minOccurs="0" name="name" type="xs:anyType"/>
+          <xs:element minOccurs="0" name="severity" type="xs:anyType"/>
+          <xs:element minOccurs="0" name="description" type="xs:anyType"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </grammars>
+  <resources base="http://localhost:8080/cloudsdk-rest/rest/members/v1.0/search">
+    <resource path="/members/v1.0">
+      <resource path="/search">
+        <method name="POST">
+          <request>
+            <representation mediaType="application/xml" element="prefix1:SearchMembersRequestType"/>
+          </request>
+          <response>
+            <representation mediaType="application/xml" element="prefix1:SearchMembersResponseType"/>
+          </response>
+        </method>
+      </resource>
+    </resource>
+  </resources>
+</application>]]></con:content><con:type>http://wadl.dev.java.net/2009/02</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080</con:endpoint></con:endpoints><con:resource name="/members/v1.0" path="/members/v1.0" id="262dab63-633a-4eb1-ac52-7f86b095c9fa"><con:settings/><con:parameters/><con:resource name="/search" path="/search" id="2eaf4c6a-7825-4827-8741-bf6e971aec87"><con:settings/><con:parameters/><con:method name="POST" method="POST" id="93b86d1f-3fb8-412e-8f9e-5e2d865222fe"><con:settings/><con:parameters/><con:representation type="REQUEST" id=""><con:mediaType>application/xml</con:mediaType><con:params/><con:element xmlns:mem="http://enterprise.unitedhealthgroup.com/schema/api/dentalfacets/mem">mem:SearchMembersRequestType</con:element><con:description xsi:nil="true"/></con:representation><con:representation type="RESPONSE" id=""><con:mediaType>application/xml</con:mediaType><con:params/><con:element xmlns:mem="http://enterprise.unitedhealthgroup.com/schema/api/dentalfacets/mem">mem:SearchMembersResponseType</con:element><con:description xsi:nil="true"/></con:representation><con:request name="Request 1" mediaType="application/xml" postQueryString="false" id="0a1e180f-6ba2-4e1a-b070-93c43dc4c130"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://localhost:8081</con:endpoint><con:request>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?>&lt;SearchMembersRequestType xmlns="http://enterprise.unitedhealthgroup.com/schema/api/dentalfacets/mem" xmlns:ns2="http://enterprise.unitedhealthgroup.com/schema/api/dentalfacets">&lt;memberId>474529508&lt;/memberId>&lt;/SearchMembersRequestType>
+</con:request><con:originalUri>http://localhost/cloudsdk-rest/rest/members/v1.0/search/members/v1.0/search</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder/></con:request></con:method></con:resource></con:resource></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>

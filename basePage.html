@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>UHG Near Me (Alpha)</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script>function submit() {
+	//Creates file object that fetches data
+	var file = new Object();
+	file.condition = document.getElementById('condition');
+	file.age = document.getElementById('age');
+	file.weight = document.getElementById('weight');
+	file.zip = document.getElementById('zip');
+
+
+	//Sanitize data
+	if (isNaN(file.age.value)) {
+		alert("Age must be a number");
+		return;
+	}
+	if (isNaN(file.weight.value)) {
+		alert("Weight must be a number");
+		return;
+	}
+	if (isNaN(file.zip.value)) {
+		alert("Zip code must be a number");
+		return;
+	}
+	if (!file.age.value) {
+		alert("Age cannot be empty");
+		return;
+	}
+	if (!file.weight.value) {
+		alert("Weight cannot be empty");
+		return;
+	}
+	if (!file.zip.value) {
+		alert("Zip code cannot be empty");
+		return;
+	}
+
+	//process ajax request and be overjoyed
+	var startDest = "http://localhost:8081/template-rest-api-war/api/ProviderTemplate/resource/interpath/";
+	var condString = String(file.condition.value);
+	var slash = "/";
+	var ageString = String(file.age.value);
+	var weightString = String(file.weight.value);
+	var zipString = String(file.zip.value);
+	var dest = startDest + condString + slash + ageString + slash + weightString + slash + zipString;
+    $.ajax({
+        url: dest,
+        type: "GET",
+        dataType: "json",
+        success: function(response) {
+        $('#something').html(JSON.stringify(response));      	
+        }
+    });
+}
+</script>
+</head>
+
+
+<body>
+<text>Pre-alpha, ignore the mess pls.</text>
+	<div>
+		<select id="condition">
+			<option value="x">x</option>
+			<option value="d">d</option>
+		</select>
+	</div>
+	<div>
+		<input type="text" id="age" placeholder = "Age here!"/>
+		<input type ="text" id="weight" placeholder = "Weight here!"/>
+		<input type="text" id="zip" placeholder = "Zip here!"/>
+	</div>
+	<div>
+		<input type="submit" id="sendButton" value="Submit" onClick ="submit()" />
+	</div>
+	<div>
+		<p id="something"></p>
+	</div>
+</body>
+</html>

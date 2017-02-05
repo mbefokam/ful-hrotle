@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="ddprovider" soapui-version="5.1.3" abortOnError="false" runType="SEQUENTIAL" id="1374016d-777c-4a68-be02-b5c7121afd7b" resourceRoot="" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:RestService" wadlVersion="http://wadl.dev.java.net/2009/02" name="ddprovider" type="rest" basePath="/hbs/devdays/provider/professional/v1.0" definitionUrl="file:/C:/Users/ttorone/Documents/polaris/ddprovider.wadl" id="facda08e-c334-4703-834d-5e990dae6a00" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/C:/Users/ttorone/Documents/polaris/ddprovider.wadl"><con:part><con:url>file:/C:/Users/ttorone/Documents/polaris/ddprovider.wadl</con:url><con:content><![CDATA[<application xmlns="http://wadl.dev.java.net/2009/02" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dd1="http://developerdays.optum.com/dd1/v1.0">
+  <grammars>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://developerdays.optum.com/dd1/v1.0" xmlns="http://developerdays.optum.com/dd1/v1.0">
+      <xs:element name="PhysicianSummaryRequest" type="PhysicianSummaryRequestType"/>
+      <xs:complexType name="PhysicianSummaryRequestType">
+        <xs:sequence>
+          <xs:element name="ZIP-CD" type="xs:string"/>
+          <xs:element name="RADIUS" type="xs:string"/>
+          <xs:element name="start" type="xs:string"/>
+          <xs:element name="PAGE" type="xs:string"/>
+          <xs:element name="TEL-PRI-CD" type="xs:string"/>
+          <xs:element name="SPCL-PRI-CD" type="xs:string"/>
+          <xs:element name="ADR-PRI-CD" type="xs:string"/>
+          <xs:element name="PROV-ID" type="xs:string"/>
+          <xs:element name="NPI-ID" type="xs:string"/>
+          <xs:element name="FST-NM" type="xs:string"/>
+          <xs:element name="LST-NM" type="xs:string"/>
+          <xs:element name="TAX-ID-NBR" type="xs:string"/>
+          <xs:element name="AREA-CD" type="xs:string"/>
+          <xs:element name="TEL-NBR" type="xs:string"/>
+          <xs:element name="SPCL-TYP-CD" type="xs:string"/>
+          <xs:element name="PRDCT-GRP-CD" type="xs:string"/>
+          <xs:element name="ST-CD" type="xs:string"/>
+          <xs:element name="CNTY-NM" type="xs:string"/>
+          <xs:element name="MDCR-ID" type="xs:string"/>
+          <xs:element name="MDCD-ID" type="xs:string"/>
+          <xs:element name="DIV" type="xs:string"/>
+          <xs:element name="PROV-TYPE" type="xs:string"/>
+          <xs:element name="PROV-NUM" type="xs:string"/>
+          <xs:element name="PANEL-NUM" type="xs:string"/>
+          <xs:element name="PROV-CLASSIF" type="xs:string"/>
+          <xs:element name="UHPD-IND" type="xs:string"/>
+          <xs:element name="CTY-NM" type="xs:string"/>
+          <xs:element name="MKT-NBR" type="xs:string"/>
+          <xs:element name="MKT-TYP-CD" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="PhysicianSummaryResponse" type="physicianSummaryResponseType"/>
+      <xs:element name="r5" type="ReturnData"/>
+      <xs:complexType name="physicianSummaryResponseType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="metadata" type="metadata"/>
+          <xs:element minOccurs="0" name="records">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element maxOccurs="unbounded" minOccurs="0" name="response" type="svcResponse"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element minOccurs="0" name="ServiceFault" type="serviceFault"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="metadata">
+        <xs:sequence>
+          <xs:element name="start" type="xs:int"/>
+          <xs:element name="count" type="xs:int"/>
+          <xs:element name="total" type="xs:long"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="svcResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="result" type="ResultSet"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ResultSet">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ret_data" type="ReturnData"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ReturnData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="prov_id" type="xs:int"/>
+          <xs:element minOccurs="0" name="npi_id" type="xs:string"/>
+          <xs:element minOccurs="0" name="fst_nm" type="xs:string"/>
+          <xs:element minOccurs="0" name="mdl_nm" type="xs:string"/>
+          <xs:element minOccurs="0" name="lst_nm" type="xs:string"/>
+          <xs:element minOccurs="0" name="nm_sufx_cd" type="xs:string"/>
+          <xs:element minOccurs="0" name="prov_classif" type="xs:string"/>
+          <xs:element minOccurs="0" name="spcl_typ_cd" type="xs:string"/>
+          <xs:element minOccurs="0" name="spcl_typ_shrt_desc" type="xs:string"/>
+          <xs:element minOccurs="0" name="spcl_pri_cd" type="xs:string"/>
+          <xs:element minOccurs="0" name="tax_id_nbr" type="xs:string"/>
+          <xs:element minOccurs="0" name="tax_id_typ" type="xs:string"/>
+          <xs:element minOccurs="0" name="adr_id" type="xs:int"/>
+          <xs:element minOccurs="0" name="adr_typ_cd" type="xs:string"/>
+          <xs:element minOccurs="0" name="epd_addr_seq" type="xs:int"/>
+          <xs:element minOccurs="0" name="adr_pri_cd" type="xs:string"/>
+          <xs:element minOccurs="0" name="st_cd" type="xs:string"/>
+          <xs:element minOccurs="0" name="cty_nm" type="xs:string"/>
+          <xs:element minOccurs="0" name="zip_cd" type="xs:string"/>
+          <xs:element minOccurs="0" name="adr_ln_1_txt" type="xs:string"/>
+          <xs:element minOccurs="0" name="dist_frm_key" type="xs:string"/>
+          <xs:element minOccurs="0" name="area_cd" type="xs:string"/>
+          <xs:element minOccurs="0" name="tel_nbr" type="xs:string"/>
+          <xs:element minOccurs="0" name="efcy_otcome_cd" type="xs:string"/>
+          <xs:element minOccurs="0" name="efcy_otcome_desc" type="xs:string"/>
+          <xs:element minOccurs="0" name="qlty_otcome_cd" type="xs:string"/>
+          <xs:element minOccurs="0" name="qlty_otcome_desc" type="xs:string"/>
+          <xs:element minOccurs="0" name="qe_desg_prty" type="xs:string"/>
+          <xs:element minOccurs="0" name="unet_cnt_stat_ind" type="xs:string"/>
+          <xs:element minOccurs="0" name="cos_cnt_stat_ind" type="xs:string"/>
+          <xs:element minOccurs="0" name="prv_actv_cd" type="xs:string"/>
+          <xs:element minOccurs="0" name="prv_eff_dt" type="xs:string"/>
+          <xs:element minOccurs="0" name="prv_canc_dt" type="xs:string"/>
+          <xs:element minOccurs="0" name="prv_clm_rnot_dt" type="xs:string"/>
+          <xs:element minOccurs="0" name="tin_actv_cd" type="xs:string"/>
+          <xs:element minOccurs="0" name="tin_eff_dt" type="xs:string"/>
+          <xs:element minOccurs="0" name="tin_canc_dt" type="xs:string"/>
+          <xs:element minOccurs="0" name="tin_clm_rnot_dt" type="xs:string"/>
+          <xs:element minOccurs="0" name="adr_actv_cd" type="xs:string"/>
+          <xs:element minOccurs="0" name="adr_eff_dt" type="xs:string"/>
+          <xs:element minOccurs="0" name="adr_canc_dt" type="xs:string"/>
+          <xs:element minOccurs="0" name="adr_clm_rnot_dt" type="xs:string"/>
+          <xs:element minOccurs="0" name="csp_cnt_stat_ind" type="xs:string"/>
+          <xs:element minOccurs="0" name="zip_cd_plus_4" type="xs:string"/>
+          <xs:element minOccurs="0" name="tel_pri_cd" type="xs:string"/>
+          <xs:element minOccurs="0" name="acpt_ptnt_cd" type="xs:string"/>
+          <xs:element minOccurs="0" name="acpt_ptnt_cd_desc" type="xs:string"/>
+          <xs:element minOccurs="0" name="deg_cd" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="serviceFault">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="faultCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="faultType" type="xs:string"/>
+          <xs:element minOccurs="0" name="message" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </grammars>
+  <resources base="http://provsrchportal-stg.uhc.com/DevDaysProviderSearch/provider/professionals/v1.0">
+    <resource path="/">
+      <method name="POST">
+        <request>
+          <representation mediaType="application/xml" element="dd1:PhysicianSummaryRequest"/>
+        </request>
+        <response>
+          <representation mediaType="application/xml" element="dd1:PhysicianSummaryResponse"/>
+        </response>
+      </method>
+    </resource>
+  </resources>
+</application>]]></con:content><con:type>http://wadl.dev.java.net/2009/02</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://apsep3601.ms.ds.uhc.com:1028</con:endpoint><con:endpoint>http://apses1326.ms.ds.uhc.com:1098</con:endpoint><con:endpoint>http://trustbroker-stg-svcs.optum.com:8080</con:endpoint></con:endpoints><con:resource name="/" path="" id="8c8325a5-cec7-4f0e-97ae-5653cf85f4f6"><con:settings/><con:parameters/><con:method name="POST" method="POST" id="1977804d-bf78-45c9-b481-8f98afbad442"><con:settings/><con:parameters/><con:representation type="REQUEST" id=""><con:mediaType>application/xml</con:mediaType><con:params/><con:element xmlns:v1="http://developerdays.optum.com/dd1/v1.0">v1:PhysicianSummaryRequest</con:element><con:description xsi:nil="true"/></con:representation><con:representation type="RESPONSE" id=""><con:mediaType>application/xml</con:mediaType><con:params/><con:element xmlns:v1="http://developerdays.optum.com/dd1/v1.0">v1:PhysicianSummaryResponse</con:element><con:description xsi:nil="true"/></con:representation><con:request name="vitest" mediaType="application/xml" postQueryString="false" id="b816afcb-90b8-4984-8bd1-cb8c6928b98b"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://trustbroker-stg-svcs.optum.com:8080</con:endpoint><con:request><![CDATA[<PhysicianSummaryRequest>
+      <first_name>Greg</first_name>
+      <last_name>House</last_name>
+      <tax_id_nbr></tax_id_nbr>
+      <prov_id></prov_id>
+      <npi_id></npi_id>
+      <spcl_typ_cd></spcl_typ_cd>
+      <prdct_grp_cd></prdct_grp_cd>
+      <city></city>
+      <st_cd></st_cd>
+      <cnty_mm></cnty_mm>
+      <zip_cd>08540</zip_cd>
+      <area_code></area_code>
+      <tel_nbr></tel_nbr>
+      <radius></radius>
+      <start></start>
+      <page></page>
+    </PhysicianSummaryRequest>
+]]></con:request><con:originalUri>http://apsep3601.ms.ds.uhc.com/DevDaysProviderSearch/provider/professionals/v12.0/</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
